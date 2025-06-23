@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciar Caminhões</title>
+  <link rel="stylesheet" href="../css/caminhoes.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header class="cabecalho">
+    <nav class="barraNavegacao">
+      <div class="logo">
+        <img src="../img/logoGrofSfundo.png" alt="Logo GROF">
+      </div>
+      <div class="containerNavegacao">
+        <a href="http://localhost/GROF/frontend/pages/dashboard.html" class="itemNavegacao">Início</a>
+        <a href="http://localhost/GROF/frontend/pages/gerenciarClientes.html" class="itemNavegacao">Clientes</a>
+        <a href="http://localhost/GROF/frontend/pages/gerenciarCaminhoes.html" class="itemNavegacao ativo">Caminhões</a>
+        <a href="http://localhost/GROF/frontend/pages/gerenciarViagens.html" class="itemNavegacao">Viagens</a>
+        <a href="http://localhost/GROF/frontend/pages/gerenciarFornecedores.html" class="itemNavegacao">Fornecedores</a>
+        <!-- Botão "Sair" será inserido dinamicamente pelo sessionCheck.js -->
+      </div>
+    </nav>
+
+  </header>
+
+  <main class="conteudo">
+    <section class="busca-container">
+      <input type="text" id="buscaCaminhao" placeholder="Pesquisar caminhões por placa..." />
+      <button id="btnNovoCaminhao">Incluir Novo Caminhão</button>
+    </section>
+
+    <form id="formCaminhao" class="formulario-caminhao" style="display: none;">
+      <input class="inputCaminhoes" type="hidden" name="id" id="id">
+      <input class="inputCaminhoes" type="text" name="placa" placeholder="Placa" required>
+      <input class="inputCaminhoes" type="text" name="modelo" placeholder="Modelo" required>
+
+      <select class="inputCaminhoes" name="marca" required>
+        <option value="">Selecione a Marca</option>
+        <option value="Ford">Ford</option>
+        <option value="Volkswagen">Volkswagen</option>
+      </select>
+
+      <input class="inputCaminhoes" type="text" name="capacidade" id="capacidade" placeholder="Capacidade (em kg)"
+        required>
+
+      <select class="inputCaminhoes select-eixos" name="eixos" id="eixos" required>
+        <option value="">Quantidade de Eixos</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+
+      <input class="inputCaminhoes" type="text" name="km_atual" placeholder="KM Atual" maxlength="6" required>
+      <input class="inputCaminhoes" type="text" name="renavam" placeholder="RENAVAM (opcional)" maxlength="11">
+      <input class="inputCaminhoes" type="text" name="motorista" placeholder="Motorista (Opcional)" maxlength="14">
+
+      <div class="botoes-formulario">
+        <button type="submit">Salvar</button>
+        <button type="button" onclick="cancelarEdicao()">Cancelar</button>
+      </div>
+
+    </form>
+    <table id="tabelaCaminhoes">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Placa</th>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Capacidade (kg)</th>
+          <th>Eixos</th>
+          <th>KM Atual</th>
+          <th>RENAVAM</th>
+          <th>Motorista</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../js/caminhao.js"></script>
+  <script src="../js/sessionCheck.js"></script>
+</body>
+
+</html>

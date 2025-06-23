@@ -1,0 +1,263 @@
+/* ======== ESTILO GLOBAL ======== */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  font-size: 15px;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ======== CABEÇALHO E LOGO ======== */
+.cabecalho {
+  background-color: #2a4d7f;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.logo img {
+  height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* ======== CONTEÚDO PRINCIPAL ======== */
+.conteudo {
+  padding: 20px;
+  font-size: 15px;
+}
+
+/* ======== NAVEGAÇÃO SUPERIOR ======== */
+.containerNavegacao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.itemNavegacao {
+  background-color: #1e3b5a;
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.itemNavegacao:hover,
+.itemNavegacao.ativo {
+  background-color: #ffffff7c;
+  color: #000000;
+  border: 2px solid #1e3b5a;
+}
+
+/* ======== ÁREA DE BUSCA ======== */
+.busca-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#buscaViagem {
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+#buscaViagem:focus {
+  border-color: #2a4d7f;
+  box-shadow: 0 0 5px rgba(42, 77, 127, 0.5);
+}
+
+#btnNovaViagem {
+  background-color: #2a4d7f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#btnNovaViagem:hover {
+  background-color: #1f3a66;
+}
+
+/* ======== FORMULÁRIO DE VIAGENS ======== */
+#formViagem {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  display: none;
+  font-size: 15px;
+}
+
+.inputViagens {
+  width: 300px;
+  max-width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.botoes-formulario {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.botoes-formulario button {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #2a4d7f;
+  color: white;
+  transition: 0.3s;
+}
+
+.botoes-formulario button:hover {
+  background-color: #1f3a66;
+}
+
+/* ======== TABELA DE VIAGENS ======== */
+#tabelaViagens {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: auto;
+  font-size: 14px;
+}
+
+#tabelaViagens th,
+#tabelaViagens td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Colunas principais com largura mínima */
+#tabelaViagens th:nth-child(1),
+#tabelaViagens td:nth-child(1) {
+  min-width: 40px;
+}
+
+#tabelaViagens th:nth-child(2),
+#tabelaViagens td:nth-child(2),
+#tabelaViagens th:nth-child(3),
+#tabelaViagens td:nth-child(3),
+#tabelaViagens th:nth-child(4),
+#tabelaViagens td:nth-child(4),
+#tabelaViagens th:nth-child(5),
+#tabelaViagens td:nth-child(5),
+#tabelaViagens th:nth-child(6),
+#tabelaViagens td:nth-child(6) {
+  min-width: 120px;
+}
+
+#tabelaViagens th:nth-child(7),
+#tabelaViagens td:nth-child(7) {
+  min-width: 90px;
+}
+
+#tabelaViagens th:nth-child(8),
+#tabelaViagens td:nth-child(8) {
+  min-width: 110px;
+  white-space: nowrap;
+}
+
+/* Hover nas linhas */
+#tabelaViagens tr:hover {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+/* Botões de Ações */
+#tabelaViagens td:nth-child(8) button {
+  margin-right: 5px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  background-color: #eee;
+  color: #2a4d7f;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+#tabelaViagens td:nth-child(8) button:hover {
+  background-color: #2a4d7f;
+  color: rgba(255, 255, 255, 0.9);
+  border-color: #1f3a66;
+}
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 768px) {
+  .busca-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inputViagens {
+    width: 100%;
+  }
+
+  .botoes-formulario {
+    flex-direction: column;
+  }
+
+  .botoes-formulario button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #tabelaViagens {
+    font-size: 13px;
+  }
+
+  #tabelaViagens th,
+  #tabelaViagens td {
+    white-space: normal;
+  }
+
+  #tabelaViagens td:nth-child(8) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  #tabelaViagens td:nth-child(8) button {
+    flex: 1 1 auto;
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}

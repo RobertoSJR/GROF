@@ -1,0 +1,202 @@
+/* Estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #f4f7fa;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: bold;
+  }
+  
+  /* Cabeçalho */
+  .cabecalho {
+    background-color: #2a4d7f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .cabecalho h1 {
+    font-size: 2.5rem;
+  }
+  
+  .cabecalho h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+  
+  /* Conteúdo principal */
+  .conteudo {
+    padding: 20px;
+  }
+  
+  .busca-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .busca-container input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+  }
+  
+  .busca-container input:focus {
+    border-color: #2a4d7f;
+    box-shadow: 0 0 5px rgba(42, 77, 127, 0.5);
+  }
+  
+  .busca-container button {
+    background-color: #2a4d7f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .busca-container button:hover {
+    background-color: #1f3a66;
+  }
+  
+  .formulario-fornecedor {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  .formulario-fornecedor input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .formulario-fornecedor button {
+    width: 48%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #2a4d7f;
+    color: white;
+  }
+  
+  .formulario-fornecedor button[type="reset"] {
+    background-color: #e74c3c;
+  }
+  
+  .formulario-fornecedor .botoes-formulario {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #2a4d7f;
+    color: white;
+  }
+  
+  table tr:hover {
+    background-color: #f1f1f17e;
+    color: #000;
+  }
+  
+  table td button {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  table td button:hover {
+    background-color: #2a4d7f;
+    color: rgba(255, 255, 255, 0.418);
+  }
+  
+  @media (max-width: 768px) {
+    .busca-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .busca-container input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .busca-container button {
+      width: 100%;
+    }
+  
+    .formulario-fornecedor input {
+      width: 100%;
+    }
+  
+    .formulario-fornecedor .botoes-formulario {
+      flex-direction: column;
+    }
+  
+    .formulario-fornecedor button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .containerNavegacao {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.itemNavegacao {
+  background-color: #1e3b5a;
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.itemNavegacao:hover,
+.itemNavegacao.ativo {
+  background-color: #ffffff7c;
+  color: #00000000;
+  border: 2px solid #1e3b5a;
+}
+  

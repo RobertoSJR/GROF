@@ -1,0 +1,351 @@
+/* Reset básico e fonte padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Corpo da página: fundo azul petróleo escuro, texto branco */
+body {
+  background-color: #1e3b5a; /* Azul petróleo escuro */
+  color: #fff;
+}
+
+/* Barra de navegação principal */
+.barraNavegacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* Logo da barra de navegação */
+.logo img {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+/* Container dos links da navegação */
+.containerNavegacao {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Estilo dos itens da navegação */
+.itemNavegacao {
+  background-color: #1e3b5a; /* Azul petróleo escuro */
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Hover e estado ativo dos links */
+.itemNavegacao:hover,
+.itemNavegacao.ativo {
+  color: #000000; /* Preto */
+  border: 2px solid #1e3b5a; /* Azul petróleo escuro */
+  background-color: #fff; /* Fundo branco */
+}
+
+/* ID específico para item ativo - para garantir cor */
+#ativo {
+  background-color: #fff;
+  color: #1e3b5a;
+  border: none;
+}
+
+/* Conteúdo principal com layout flex */
+.conteudoPrincipal {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Painel que agrupa vendas e estoque - ocupa mais espaço */
+.painelVendasEstoque {
+  flex: 3;
+  margin-right: 20px;
+}
+
+/* Painel lateral para notícias */
+.painelNoticias {
+  background-color: #fff; /* Fundo branco */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  overflow: hidden;
+  flex: 1.5;
+}
+
+/* Painéis internos: últimas vendas, preço médio e container de notícias */
+.painelUltimasVendas,
+.painelPrecoMedio,
+.containerNoticias {
+  background-color: #2f5076; /* Azul intermediário */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Container notícias com padding reduzido */
+.containerNoticias {
+  padding: 15px;
+}
+
+/* Títulos dos painéis */
+.painelUltimasVendas h3,
+.painelPrecoMedio h3,
+.containerNoticias h3 {
+  background-color: #ccc; /* Cinza claro */
+  color: #1e3b5a; /* Azul petróleo escuro */
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Título do container notícias com cor verde escuro */
+.containerNoticias h3 {
+  color: #2e7d32; /* Verde escuro */
+  margin-top: 0;
+}
+
+/* Estilização das tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  font-size: 14px;
+}
+
+/* Células da tabela */
+table th,
+table td {
+  border: 1px solid #ccc; /* Cinza claro */
+  padding: 10px;
+  text-align: center;
+}
+
+/* Layout lado a lado para resumo e tabela no estoque */
+.estoqueConteudo {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Resumo do estoque com fundo cinza claro e texto azul petróleo */
+.resumoEstoque {
+  background-color: #ccc; /* Cinza claro */
+  color: #1e3b5a; /* Azul petróleo escuro */
+  border-radius: 12px;
+  padding: 15px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* Área da tabela de estoque para preencher espaço */
+.tabelaEstoque {
+  flex: 1;
+}
+
+/* Estilos para rótulos e valores no resumo */
+.itemResumo .rotulo {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.itemResumo .valor {
+  font-size: 20px;
+}
+
+/* Carrossel de notícias: container flexível e relativo */
+.carrosselNoticias {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Wrapper para esconder overflow */
+.noticiasWrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Slides das notícias */
+.noticiaSlides {
+  width: 100%;
+  position: relative;
+}
+
+/* Itens das notícias com animação fadeIn */
+.noticiaItem {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.noticiaItem.ativo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animação de fade in para as notícias */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Imagem das notícias */
+.noticiaImagem {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.noticiaImagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Conteúdo das notícias */
+.noticiaConteudo {
+  height: 300px;
+  background-color: #ccc; /* Cinza claro */
+  color: #333; /* Cinza escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* Título das notícias */
+.noticiaConteudo h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #333; /* Cinza escuro */
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+/* Parágrafo das notícias */
+.noticiaConteudo p {
+  margin-top: 0;
+  color: #666; /* Cinza médio */
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+/* Rodapé da notícia */
+.noticiaRodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+/* Data da notícia com cor cinza */
+.noticiaData {
+  color: #777; /* Cinza */
+  font-size: 0.8rem;
+}
+
+/* Botão das notícias: verde escuro */
+.noticiaBotao {
+  background-color: #2e7d32; /* Verde escuro */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.noticiaBotao:hover {
+  background-color: #205723; /* Verde fechado */
+}
+
+/* Botões de navegação do carrossel */
+.btnNavegacao {
+  background-color: rgba(46, 125, 50, 0.7); /* Verde escuro translúcido */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 10;
+  transition: background-color 0.2s;
+}
+
+.btnNavegacao:hover {
+  background-color: rgba(46, 125, 50, 1); /* Verde escuro opaco */
+}
+
+/* Indicadores do carrossel */
+.indicadoresNoticias {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicador {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc; /* Cinza claro */
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.indicador.ativo {
+  background-color: #2e7d32; /* Verde escuro */
+}
+
+/* Estilo para mensagem de erro nas notícias */
+.noticiaConteudo.erro {
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* Botão para tentar novamente */
+.btnTentarNovamente {
+  background-color: #2e7d32; /* Verde escuro */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+}
+
+.btnTentarNovamente:hover {
+  background-color: #205723; /* Verde fechado */
+}

@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #1e3b5a;
+  color: #fff;
+}
+
+.barraNavegacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo img {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.containerNavegacao {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.itemNavegacao {
+  background-color: #1e3b5a;
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.itemNavegacao:hover,
+.itemNavegacao.ativo {
+  color: #000000;
+  border: 2px solid #1e3b5a;
+}
+
+#ativo {
+  background-color: #fff;
+  color: #1e3b5a;
+}
+
+.conteudoPrincipal {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.painelVendasEstoque {
+  flex: 3;
+  margin-right: 20px;
+}
+
+.painelNoticias {
+  flex: 1.5;
+}
+
+.painelUltimasVendas,
+.painelPrecoMedio,
+.containerNoticias {
+  background-color: #2f5076;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.painelUltimasVendas h3,
+.painelPrecoMedio h3,
+.containerNoticias h3 {
+  background-color: #ccc;
+  color: #1e3b5a;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  font-size: 14px;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Novo layout lado a lado entre resumo e tabela */
+.estoqueConteudo {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.resumoEstoque {
+  background-color: #ccc;
+  color: #1e3b5a;
+  border-radius: 12px;
+  padding: 15px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.tabelaEstoque {
+  flex: 1;
+}
+
+.itemResumo .rotulo {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.itemResumo .valor {
+  font-size: 20px;
+}
+
+.noticiaConteudo {
+  height: 300px;
+  background-color: #ccc;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+
+/* --- INÍCIO DOS ESTILOS ADICIONADOS PARA A PÁGINA DE ESTOQUE --- */
+
+.conteudo {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap; /* para responsividade */
+}
+
+/* Container da tabela e formulário */
+.estoque-container {
+  flex: 3;
+  background-color: #2f5076;
+  padding: 20px;
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Busca e botão alinhados */
+.busca-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.busca-container input[type="text"] {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.busca-container button {
+  background-color: #fff;
+  color: #1e3b5a;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.busca-container button:hover {
+  background-color: #d9d9d9;
+}
+
+/* Formulário de cadastro */
+.formulario-estoque {
+  background-color: #1e3b5a;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #fff;
+}
+
+.formulario-estoque input,
+.formulario-estoque select {
+  flex: 1 1 180px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+.botoes-formulario {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.botoes-formulario button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botoes-formulario button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.botoes-formulario button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.botoes-formulario button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+.botoes-formulario button[type="button"]:hover {
+  background-color: #d7372f;
+}
+
+/* Tabela */
+#tabelaEstoque {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: white;
+}
+
+#tabelaEstoque th,
+#tabelaEstoque td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: #1e3b5a;
+}
+
+#tabelaEstoque th {
+  background-color: #4a6ea9;
+}
+
+/* Container das notícias */
+.noticias-container {
+  flex: 1.5;
+  background-color: #2f5076;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 250px;
+}
+
+.noticias-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.noticia {
+  background-color: #ccc;
+  color: #333;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Responsividade simples */
+@media (max-width: 768px) {
+  .conteudo {
+    flex-direction: column;
+  }
+
+  .estoque-container,
+  .noticias-container {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+/* --- FIM DOS ESTILOS ADICIONADOS --- */

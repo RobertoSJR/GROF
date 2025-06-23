@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA GROF - PÁGINA HOME</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+    <nav class="barraNavegacao">
+        <div class="logo">
+            <img src="../img/logoGrofSfundo.png" alt="Logo GROF">
+        </div>
+        <div class="containerNavegacao">
+            <a href="http://localhost/GROF/frontend/pages/dashboard.html" class="itemNavegacao ativo">Início</a>
+            <a href="http://localhost/GROF/frontend/pages/gerenciarClientes.html" class="itemNavegacao">Clientes</a>
+            <a href="http://localhost/GROF/frontend/pages/gerenciarCaminhoes.html" class="itemNavegacao">Caminhões</a>
+            <a href="http://localhost/GROF/frontend/pages/gerenciarViagens.html" class="itemNavegacao">Viagens</a>
+            <a href="http://localhost/GROF/frontend/pages/gerenciarFornecedores.html"
+                class="itemNavegacao">Fornecedores</a>
+            <!-- O botão "Sair" será injetado dinamicamente via sessionCheck.js -->
+        </div>
+    </nav>
+
+
+    <div class="conteudoPrincipal">
+        <div class="painelVendasEstoque">
+            <div class="painelUltimasVendas">
+                <h3>Últimas Vendas</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Cliente</th>
+                            <th>Local</th>
+                            <th>Peso (sc)</th>
+                            <th>Preço (sc)</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>03/02/2025</td>
+                            <td>Roberto</td>
+                            <td>Carmo do Paranaíba</td>
+                            <td>405,28</td>
+                            <td>R$72,00</td>
+                            <td>R$29.180,16</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="painelPrecoMedio">
+                <h3>Estoque</h3>
+                <div class="estoqueConteudo">
+                    <div class="resumoEstoque">
+                        <div class="itemResumo">
+                            <p class="rotulo">Total</p>
+                            <p class="valor">6.700 sc *</p>
+                        </div>
+                        <div class="itemResumo">
+                            <p class="rotulo">Preço Médio</p>
+                            <p class="valor">R$64,50 *</p>
+                        </div>
+                    </div>
+
+                    <div class="tabelaEstoque">
+                        <section class="estoque-container">
+                            <div class="busca-container">
+                                <input type="text" id="buscaEstoque" placeholder="Pesquisar por fornecedor...">
+                                <button id="btnNovoEstoque">Incluir Novo Estoque</button>
+                            </div>
+
+                            <form id="formEstoque" class="formulario-estoque" style="display: none;">
+                                <input type="hidden" name="id" id="id">
+
+                                <select name="idFornecedor" required>
+                                    <option value="">Selecione um fornecedor</option>
+                                    <!-- opções preenchidas dinamicamente -->
+                                </select>
+
+                                <input type="text" name="cidade" placeholder="Cidade (fazenda)" required>
+                                <input type="number" name="quantidadeSacas" placeholder="Quantidade comprada (sc)"
+                                    required>
+                                <input type="number" step="0.01" name="precoSaca" placeholder="Preço por saca (R$)"
+                                    required>
+
+                                <div class="botoes-formulario">
+                                    <button type="submit">Salvar</button>
+                                    <button type="button" onclick="cancelarEstoque()">Cancelar</button>
+                                </div>
+                            </form>
+
+                            <table id="tabelaEstoque">
+                                <thead>
+                                    <tr>
+                                        <th>Fornecedor</th>
+                                        <th>Cidade</th>
+                                        <th>Qtd. Comprada</th>
+                                        <th>Preço por Saca (R$)</th>
+                                        <th>Estoque Atual</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Conteúdo dinâmico -->
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="painelNoticias">
+            <div class="containerNoticias">
+                <h3>(API DE NOTICIAS)</h3>
+                <div class="noticiaConteudo">
+                    <p>AINDA NAO CONSEGUI IMPLEMENTAR</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/sessionCheck.js"></script>
+    <script src="../js/estoque.js"></script>
+</body>
+
+</html>

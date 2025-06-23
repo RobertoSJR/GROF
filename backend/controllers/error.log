@@ -1,0 +1,8 @@
+[16-Jun-2025 18:54:21 Europe/Berlin] PHP Fatal error:  Cannot redeclare listarEstoques() (previously declared in C:\xampp\htdocs\GROF\backend\models\viagemModel.php:5) in C:\xampp\htdocs\GROF\backend\models\estoqueModel.php on line 19
+[16-Jun-2025 18:54:22 Europe/Berlin] PHP Fatal error:  Cannot redeclare listarEstoques() (previously declared in C:\xampp\htdocs\GROF\backend\models\viagemModel.php:5) in C:\xampp\htdocs\GROF\backend\models\estoqueModel.php on line 19
+[16-Jun-2025 18:54:38 Europe/Berlin] PHP Fatal error:  Cannot redeclare listarEstoques() (previously declared in C:\xampp\htdocs\GROF\backend\models\viagemModel.php:5) in C:\xampp\htdocs\GROF\backend\models\estoqueModel.php on line 19
+[16-Jun-2025 18:55:45 Europe/Berlin] PHP Fatal error:  Cannot redeclare listarEstoques() (previously declared in C:\xampp\htdocs\GROF\backend\models\viagemModel.php:5) in C:\xampp\htdocs\GROF\backend\models\estoqueModel.php on line 19
+[23-Jun-2025 12:42:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function buscarEstoquePorFornecedor() in C:\xampp\htdocs\GROF\backend\controllers\viagemController.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\GROF\backend\controllers\viagemController.php on line 39

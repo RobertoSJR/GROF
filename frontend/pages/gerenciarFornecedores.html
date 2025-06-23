@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciar Fornecedores</title>
+  <link rel="stylesheet" href="../css/fornecedores.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <header class="cabecalho">
+    <nav class="barraNavegacao">
+      <div class="logo">
+        <img src="../img/logoGrofSfundo.png" alt="Logo GROF" />
+      </div>
+      <div class="containerNavegacao">
+        <a href="http://localhost/GROF/frontend/pages/dashboard.html" class="itemNavegacao">Início</a>
+        <a href="http://localhost/GROF/frontend/pages/gerenciarClientes.html" class="itemNavegacao">Clientes</a>
+        <a href="http://localhost/GROF/frontend/pages/gerenciarCaminhoes.html" class="itemNavegacao">Caminhões</a>
+        <a href="http://localhost/GROF/frontend/pages/gerenciarViagens.html" class="itemNavegacao">Viagens</a>
+        <a href="http://localhost/GROF/frontend/pages/gerenciarFornecedores.html"
+          class="itemNavegacao ativo">Fornecedores</a>
+        <!-- Botão "Sair" será adicionado automaticamente -->
+      </div>
+    </nav>
+
+  </header>
+
+  <main class="conteudo">
+    <section class="busca-container">
+      <input type="text" id="buscaFornecedor" placeholder="Pesquisar fornecedores..." />
+      <button id="btnNovoFornecedor">Incluir Novo Fornecedor</button>
+    </section>
+
+    <form id="formFornecedor" class="formulario-fornecedor" style="display: none;">
+      <input type="hidden" name="id" id="id">
+      <input type="text" name="nomeFornecedor" placeholder="Nome do Fornecedor/Empresa" required>
+      <input type="text" name="responsavel" placeholder="Responsável" required>
+      <input type="text" id="cnpj_cpf" name="cnpj_cpf" placeholder="CPF/CNPJ (opcional)" required>
+      <input type="text" name="cidade" placeholder="Cidade">
+      <input type="text" name="endereco" placeholder="Endereço (opcional)">
+      <div class="botoes-formulario">
+        <button type="submit">Salvar</button>
+        <button type="button" onclick="cancelarEdicao()">Cancelar</button>
+      </div>
+    </form>
+
+    <table id="tabelaFornecedores">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Responsável</th>
+          <th>CPF/CNPJ</th>
+          <th>Cidade</th>
+          <th>Endereço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Modal para exibir os detalhes do fornecedor -->
+  <div id="detalhesModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Detalhes do Fornecedor</h2>
+      <table>
+        <tr>
+          <th>Nome do Fornecedor</th>
+          <td id="nomeFornecedor"></td>
+        </tr>
+        <tr>
+          <th>Responsável</th>
+          <td id="responsavel"></td>
+        </tr>
+        <tr>
+          <th>CPF/CNPJ</th>
+          <td id="cnpjCpf"></td>
+        </tr>
+        <tr>
+          <th>Cidade</th>
+          <td id="cidade"></td>
+        </tr>
+        <tr>
+          <th>Endereço</th>
+          <td id="endereco"></td>
+        </tr>
+      </table>
+      <button onclick="fecharModal()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="../js/fornecedor.js"></script>
+  <script src="../js/sessionCheck.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Viagens</title>
+    <link rel="stylesheet" href="../css/viagens.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="barraNavegacao">
+            <div class="logo">
+                <img src="../img/logoGrofSfundo.png" alt="Logo GROF" />
+            </div>
+            <div class="containerNavegacao">
+                <a href="http://localhost/GROF/frontend/pages/dashboard.html" class="itemNavegacao">Início</a>
+                <a href="http://localhost/GROF/frontend/pages/gerenciarClientes.html" class="itemNavegacao">Clientes</a>
+                <a href="http://localhost/GROF/frontend/pages/gerenciarCaminhoes.html"
+                    class="itemNavegacao">Caminhões</a>
+                <a href="http://localhost/GROF/frontend/pages/gerenciarViagens.html"
+                    class="itemNavegacao ativo">Viagens</a>
+                <a href="http://localhost/GROF/frontend/pages/gerenciarFornecedores.html"
+                    class="itemNavegacao">Fornecedores</a>
+                <!-- Botão "Sair" será adicionado dinamicamente -->
+            </div>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <section class="busca-container">
+            <input type="text" id="buscaViagem" placeholder="Pesquisar viagens por destino...">
+            <button id="btnNovaViagem">Incluir Nova Viagem</button>
+        </section>
+
+        <form id="formViagem" class="formulario-viagem" style="display: none;">
+            <input type="hidden" name="id" id="id">
+
+            <select id="clienteViagem" name="cliente" class="inputViagem" required>
+                <option value="">Selecione um Cliente</option>
+                <!-- Opções preenchidas dinamicamente -->
+            </select>
+
+            <select id="fornecedorViagem" name="fornecedor" class="inputViagem" required>
+                <option value="">Selecione um Fornecedor</option>
+                <!-- Opções preenchidas dinamicamente -->
+            </select>
+
+            <select id="caminhaoViagem" name="caminhao" class="inputViagem" required>
+                <option value="">Selecione um Caminhão</option>
+                <!-- Opções preenchidas dinamicamente -->
+            </select>
+
+            <input type="number" id="pesoCarga" name="peso_carga" class="inputViagem" placeholder="Peso da Carga (kg)"
+                required min="0" step="0.01" />
+
+            <input type="number" id="precoSaca" name="preco_saca" class="inputViagem" placeholder="Preço da Saca (R$)"
+                required min="0" step="0.01" />
+
+            <input type="date" id="dataViagem" name="data_viagem" class="inputViagem" required />
+
+            <div class="botoes-formulario">
+                <button type="submit">Salvar</button>
+                <button type="button" onclick="cancelarEdicao()">Cancelar</button>
+            </div>
+        </form>
+
+        <table id="tabelaViagens">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Fornecedor</th>
+                    <th>Placa Caminhão</th>
+                    <th>Peso (kg)</th>
+                    <th>Preço da Saca (R$)</th>
+                    <th>Preço da Carga (R$)</th> <!-- NOVA COLUNA -->
+                    <th>Data da Viagem</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas inseridas via JS -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/viagem.js"></script>
+    <script src="../js/sessionCheck.js"></script>
+</body>
+
+</html>
